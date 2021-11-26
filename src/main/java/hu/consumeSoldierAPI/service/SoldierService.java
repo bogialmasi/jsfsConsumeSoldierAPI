@@ -31,7 +31,7 @@ public class SoldierService {
         return s;
     }
 
-    public void recruitSoldier(Date birthdate, String rank, String weapon, int badges) {
+    public void recruitSoldier(String birthdate, String rank, String weapon, int badges) {
         String url = REST_URL;
         Soldier s = new Soldier(birthdate, rank, weapon, badges);
         HttpEntity<Soldier> requestEntity = new HttpEntity<>(s);

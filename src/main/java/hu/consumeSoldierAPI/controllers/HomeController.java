@@ -37,7 +37,7 @@ public class HomeController {
     }
 
     @PostMapping("/soldiers")
-    public String addSoldier(@RequestParam("birthdate") Date birthdate,
+    public String addSoldier(@RequestParam("birthdate") String birthdate,
                              @RequestParam("rank") String rank,
                              @RequestParam("weapon") String weapon,
                              @RequestParam("badges") int badges, Model model){

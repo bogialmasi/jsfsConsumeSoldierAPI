@@ -1,5 +1,7 @@
 package hu.consumeSoldierAPI.domain;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Soldier {
@@ -12,11 +14,16 @@ public class Soldier {
 
     public Soldier(){}
 
-    public Soldier(Date birthdate, String rank, String weapon, int badges) {
+    public Soldier(String birthdate, String rank, String weapon, int badges) {
         this.rank = rank;
         this.badges = badges;
-        this.birthdate = birthdate;
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        try{this.birthdate = f.parse(birthdate);}
+        catch (ParseException e) {
+            e.printStackTrace();
+        }
         this.weapon = weapon;
+        this.intact = true;
     }
 
     public int getId() {
