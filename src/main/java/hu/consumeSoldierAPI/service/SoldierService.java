@@ -31,11 +31,12 @@ public class SoldierService {
         return s;
     }
 
-    public void recruitSoldier(String birthdate, String rank, String weapon, int badges) {
+    public int recruitSoldier(String birthdate, String rank, String weapon, int badges) {
         String url = REST_URL;
         Soldier s = new Soldier(birthdate, rank, weapon, badges);
         HttpEntity<Soldier> requestEntity = new HttpEntity<>(s);
         ResponseEntity<Soldier> responseEntity =  restTemplate.exchange(url, HttpMethod.POST, requestEntity, Soldier.class);
+        return responseEntity.getStatusCodeValue();
     }
 }
 

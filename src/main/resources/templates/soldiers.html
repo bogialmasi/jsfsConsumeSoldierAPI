@@ -9,6 +9,7 @@
   <nav th:replace="nav::navbar"></nav>
 </header>
 <main>
+  <p th:if="${statusCode} == 201" th:text="'New soldier is recruited ! '"></p>
 <table cellpadding="15">
   <tr>
     <th>Id</th>

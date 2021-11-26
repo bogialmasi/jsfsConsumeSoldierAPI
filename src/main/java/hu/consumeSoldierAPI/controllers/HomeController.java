@@ -41,7 +41,8 @@ public class HomeController {
                              @RequestParam("rank") String rank,
                              @RequestParam("weapon") String weapon,
                              @RequestParam("badges") int badges, Model model){
-        service.recruitSoldier(birthdate, rank, weapon, badges);
+        int statusCode = service.recruitSoldier(birthdate, rank, weapon, badges);
+        model.addAttribute("statuscode", statusCode);
         model.addAttribute("soldiers", service.getSoldiers());
         return "soldiers";
     }
