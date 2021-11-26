@@ -18,15 +18,15 @@
     <th>Weapon</th>
     <th>Intact</th>
   </tr>
-
   <tbody>
   <tr th:each="soldier : ${soldiers}">
-    <td th:text="${soldiers.id}">Id</td>
-    <td th:text="${soldiers.birthdate}">Birthdate</td>
-    <td th:text="${soldiers.rank}">Rank</td>
-    <td th:text="${soldiers.badges}">Badges</td>
-    <td th:text="${soldiers.weapon}">Weapon</td>
-    <td th:text="${soldiers.intact}">Intact</td>
+    <td><a th:text="${soldier.id}" th:href="'/soldiers/'+${soldier.id}" href="#">Id</a></td>
+    <td th:text="${soldier.birthdate}">Birthdate</td>
+    <td th:text="${soldier.rank}">Rank</td>
+    <td th:text="${soldier.badges}">Badges</td>
+    <td th:text="${soldier.weapon}">Weapon</td>
+    <td th:text="${soldier.intact}">Intact</td>
+
   </tr>
   </tbody>
 </table>
