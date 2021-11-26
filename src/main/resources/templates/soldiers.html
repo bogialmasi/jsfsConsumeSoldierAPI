@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Soldiers</title>
+</head>
+<body>
+<header>
+  <nav th:replace="nav::navbar"></nav>
+</header>
+<main>
+<table cellpadding="15">
+  <tr>
+    <th>Id</th>
+    <th>Birthdate</th>
+    <th>Rank</th>
+    <th>Badges</th>
+    <th>Weapon</th>
+    <th>Intact</th>
+  </tr>
+
+  <tbody>
+  <tr th:each="soldier : ${soldiers}">
+    <td th:text="${soldiers.id}">Id</td>
+    <td th:text="${soldiers.birthdate}">Birthdate</td>
+    <td th:text="${soldiers.rank}">Rank</td>
+    <td th:text="${soldiers.badges}">Badges</td>
+    <td th:text="${soldiers.weapon}">Weapon</td>
+    <td th:text="${soldiers.intact}">Intact</td>
+  </tr>
+  </tbody>
+</table>
+</main>
+</body>
+</html>
