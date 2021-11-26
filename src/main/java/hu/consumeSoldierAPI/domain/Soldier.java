@@ -12,6 +12,13 @@ public class Soldier {
 
     public Soldier(){}
 
+    public Soldier(Date birthdate, String rank, String weapon, int badges) {
+        this.rank = rank;
+        this.badges = badges;
+        this.birthdate = birthdate;
+        this.weapon = weapon;
+    }
+
     public int getId() {
         return id;
     }

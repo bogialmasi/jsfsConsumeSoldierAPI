@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recruitment</title>
+</head>
+<body>
+<header>
+  <nav th:replace="nav::navbar"></nav>
+</header>
+<main>
+<form method="POST" action="soldiers.html" th:action="'/soldiers'">
+  <label>Birth Date: </label>
+  <input type="date" name="birthdate" required>
+  <br>
+  <label>Rank: </label>
+  <input type="text" name="rank" autofocus required>
+  <br>
+  <label>Badges </label>
+  <input type="number" name="badges" value="1" min="1" max="150"  required>
+  <br>
+  <label>Weapon: </label>
+  <input type="text" name="weapon" required>
+  <input type="submit" value="Recruit!">
+</form>
+</main>
+</body>
+</html>
